@@ -1,14 +1,14 @@
 // src/app.js
 
-const express = require('express');
-const {insertURL} = require('./utils/DB');
+const express = require("express");
+const { insertURL } = require("./utils/DB");
 
 const app = express();
 app.use(express.json());
 
-app.post('/add-url', async (req, res) => {
-  const {body} = req;
-  console.log('body', body);
+app.post("/add-url", async (req, res) => {
+  const { body } = req;
+  console.log("body", body);
 
   const result = await insertURL(body);
 
