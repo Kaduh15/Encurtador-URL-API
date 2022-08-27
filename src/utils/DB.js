@@ -40,8 +40,17 @@ const insertURL = async ({ url }) => {
   return newShortURL;
 };
 
+const getOriginalURL = async (shortURL) => {
+  const { urls } = await readFile();
+
+  const originalURL = urls.find((url) => url.shortURL === shortURL);
+
+  return originalURL.originalURL;
+}; 
+
 module.exports = {
   readFile,
   writeFile,
   insertURL,
+  getOriginalURL,
 };
