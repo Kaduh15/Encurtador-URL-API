@@ -14,9 +14,7 @@ app.use('/add-url', addURL);
 
 // Middleware de Error
 app.use((err, req, res, _next) => {
-  res
-    .status(500)
-    .json({ message: `Algo deu errado! Mensagem: ${err.message}` });
-  });
+  res.status(500).json({message : `Algo deu errado! Mensagem: ${err.message}`});
+});
 
 module.exports = app;
