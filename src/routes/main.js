@@ -12,7 +12,7 @@ router.get('/:shortURL', async (req, res) => {
     res.status(200).redirect(urlOriginal);
   }
 
-  res.status(400).josn({
+  res.status(400).json({
     message: 'URL not found',
   });
 });
