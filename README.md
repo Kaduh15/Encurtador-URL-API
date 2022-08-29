@@ -34,7 +34,7 @@ Install Encurtador-URL with npm
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/encurtador-url
+$ git clone https://github.com/kaduh15/encurtador-url
 
 # Access
 $ cd encurtador-url
