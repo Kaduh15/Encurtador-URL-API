@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Kaduh15/Encurtador-URL#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
     "nanoid": "^4.0.0"
   },
   "devDependencies": {
