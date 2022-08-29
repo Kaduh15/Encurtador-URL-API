@@ -22,7 +22,6 @@
 </p>
 
 <p align="center">
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="##Tech-Stack">Technologies</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
   <a href="https://github.com/kaduh15" target="_blank">Author</a>
@@ -54,8 +53,8 @@ $ npm start
 
 #### **POST** _`/add-url`_
 
-- Objetivo: Adiciona URL.
-- Código HTTP: `201 - Created`;
+- Objective: Adiciona URL.
+- Code HTTP: `201 - Created`;
 - Body (exemplo):
 
 ```json
@@ -69,28 +68,21 @@ RESPONSE Body:
 ```json
 {
   "id":1,
-  "shortURL": "ty2ZF", // URL Curta;
-  "originalURL": "http://www.exemplo.com", // URL original
+  "shortURL": "ty2ZF", // Short URl;
+  "originalURL": "http://www.exemplo.com", // Original URL
 }
 ```
 
-#### Get item
+### add URL
 
-```http
-  GET /:shortURL
+#### **GET** _`/:shortURL`_
+
+- Objective: Redirect to Original URL.
+- Code HTTP: `200 - Success`;
+
 ```
-
-- Objetivo: Adiciona URL.
-- Código HTTP: `200 - Success`;
-- Body (exemplo):
-
-```json
-{
-  "url": "http://www.exemplo.com", // Qualquer URL Válida;
-}
+  RESPONSE Redirected to the desired URL
 ```
-
-RESPONSE Redirected to the desired URL
 
 ## Tech Stack
 
