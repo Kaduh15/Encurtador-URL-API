@@ -1,6 +1,5 @@
-// src/app.js
-
 const express = require('express');
+require('express-async-errors');
 
 const main = require('./routes/main');
 const addURL = require('./routes/addURL');
@@ -13,9 +12,9 @@ app.use('/', main);
 app.use('/add-url', addURL);
 
 // Middleware de Error
-app.use((err, req, res, _next) => {
+app.use((err, _req, res, _next) => {
   res
-    .status(500)
+    .status(err.status || 500)
     .json({ message: `Algo deu errado! Mensagem: ${err.message}` });
 });
 

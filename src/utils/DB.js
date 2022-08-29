@@ -28,7 +28,7 @@ const insertURL = async ({ url }) => {
   const data = await readFile();
   const newShortURL = {
     id: data.nextID,
-    shortURL: createURL(),
+    shortURL: createURL(5),
     originalURL: url,
   };
 
