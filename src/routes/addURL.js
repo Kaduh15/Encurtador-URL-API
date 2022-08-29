@@ -1,9 +1,10 @@
 const express = require('express');
+const validateURL = require('../middlewares/validateURL');
 const { insertURL } = require('../utils/DB');
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/', validateURL, async (req, res) => {
   const { body } = req;
 
   const result = await insertURL(body);
