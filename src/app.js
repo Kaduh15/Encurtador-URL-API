@@ -1,6 +1,7 @@
 // src/app.js
 
 const express = require("express");
+
 const { insertURL, getOriginalURL } = require("./utils/DB");
 
 const app = express();
@@ -20,6 +21,12 @@ app.get("/:shortURL", async (req, res) => {
   const urlOriginal = await getOriginalURL(shortURL);
 
   res.status(200).redirect(urlOriginal);
+
 });
+
+app.use((err, req, res, _next) => {
+  res
+    .status(500)
+    .json({ message: `Algo deu errado! Mensagem: ${err.message}` });
 
 module.exports = app;
