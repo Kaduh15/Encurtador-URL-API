@@ -98,10 +98,11 @@ dist
 .fusebox/
 
 # DB
-files/DB.json
+src/files/DB.json
 
 # DynamoDB Local files
 .dynamodb/
 
 # TernJS port file
 .tern-port
+
