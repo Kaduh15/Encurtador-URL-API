@@ -1,10 +1,10 @@
-const express = require('express');
-const {insertURL} = require('../utils/DB');
+const express = require("express");
+const { insertURL } = require("../utils/DB");
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
-  const {body} = req;
+router.post("/", async (req, res) => {
+  const { body } = req;
 
   const result = await insertURL(body);
 
