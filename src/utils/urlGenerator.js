@@ -1,8 +1,8 @@
 const createURL = (sizeURL = 16) => {
-  const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const numbers = "0123456789";
+  const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const numbers = '0123456789';
 
-  let URL = "";
+  let URL = '';
 
   for (let index = 0; index < sizeURL; index += 1) {
     const isLetter = Math.round(Math.random());

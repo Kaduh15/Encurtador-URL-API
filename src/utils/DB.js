@@ -1,15 +1,15 @@
-const fs = require("fs").promises;
-const { join } = require("path");
-const createURL = require("./urlGenerator");
+const fs = require('fs').promises;
+const { join } = require('path');
+const createURL = require('./urlGenerator');
 
-const path = "../files/DB.json";
+const path = '../files/DB.json';
 const readFile = async () => {
   try {
     const completePath = join(__dirname, path);
-    const contentFile = await fs.readFile(completePath, "utf-8");
+    const contentFile = await fs.readFile(completePath, 'utf-8');
     return JSON.parse(contentFile);
   } catch (e) {
-    console.error("Erro ao abrir o arquivo", e.message);
+    console.error('Erro ao abrir o arquivo', e.message);
     return null;
   }
 };
@@ -19,7 +19,7 @@ const writeFile = async (content) => {
     const completePath = join(__dirname, path);
     await fs.writeFile(completePath, JSON.stringify(content, null, 2));
   } catch (e) {
-    console.error("Erro ao salvar o arquivo", e.message);
+    console.error('Erro ao salvar o arquivo', e.message);
     return null;
   }
 };
