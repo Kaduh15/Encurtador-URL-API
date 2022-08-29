@@ -8,7 +8,13 @@ router.get('/:shortURL', async (req, res) => {
 
   const urlOriginal = await getOriginalURL(shortURL);
 
-  res.status(200).redirect(urlOriginal);
+  if (urlOriginal) {
+    res.status(200).redirect(urlOriginal);
+  }
+
+  res.status(400).josn({
+    message: 'URL not found',
+  });
 });
 
 module.exports = router;

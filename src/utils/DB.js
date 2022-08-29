@@ -44,8 +44,10 @@ const getOriginalURL = async (shortURL) => {
   const { urls } = await readFile();
 
   const originalURL = urls.find((url) => url.shortURL === shortURL);
-
-  return originalURL.originalURL;
+  if (originalURL) {
+    return originalURL.originalURL;
+  }
+  return null;
 };
 
 module.exports = {
