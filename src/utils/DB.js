@@ -1,5 +1,7 @@
 const fs = require('fs').promises;
 const { join } = require('path');
+const os = require('os');
+const { format } = require('date-fns');
 const createURL = require('./urlGenerator');
 
 const path = '../files/DB.json';
@@ -30,6 +32,7 @@ const insertURL = async ({ url }) => {
     id: data.nextID,
     shortURL: createURL(5),
     originalURL: url,
+    visites: [],
   };
 
   data.urls.push(newShortURL);
@@ -50,9 +53,28 @@ const getOriginalURL = async (shortURL) => {
   return null;
 };
 
+const updateVisited = async (shortURL) => {
+  const data = await readFile();
+
+  const url = data.urls.find((currUrl) => currUrl.shortURL === shortURL);
+  
+  const visit = { 
+    type_sys: os.type(),
+    ip: os.networkInterfaces().eth0[0].address,
+    date: format(new Date(), 'dd-MM-yyyy HH:mm:ss'),
+  };
+
+  url.visites.push(visit);
+
+  await writeFile(data);
+
+  return url;
+};
+
 module.exports = {
   readFile,
   writeFile,
   insertURL,
   getOriginalURL,
+  updateVisited,
 };

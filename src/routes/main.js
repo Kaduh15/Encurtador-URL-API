@@ -1,5 +1,5 @@
 const express = require('express');
-const { getOriginalURL } = require('../utils/DB');
+const { getOriginalURL, updateVisited } = require('../utils/DB');
 
 const router = express.Router();
 
@@ -9,6 +9,7 @@ router.get('/:shortURL', async (req, res) => {
   const urlOriginal = await getOriginalURL(shortURL);
 
   if (urlOriginal) {
+    await updateVisited(shortURL);
     res.status(200).redirect(urlOriginal);
   }
 
