@@ -21,12 +21,6 @@
   <img alt="Github stars" src="https://img.shields.io/github/stars/kaduh15/encurtador-url?color=56BEB8" />
 </p>
 
-<p align="center">
-  <a href="##Tech-Stack">Technologies</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/kaduh15" target="_blank">Author</a>
-</p>
-
 ## :checkered_flag: Starting
 
 Install Encurtador-URL with npm
@@ -89,6 +83,8 @@ RESPONSE Body:
 **Server:**
 ![Node JS](https://img.shields.io/badge/Node_JS-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-white?style=for-the-badge&logo=express&logoColor=111)
+![Mysql](https://img.shields.io/badge/Mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 ## :memo: License
 
