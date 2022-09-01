@@ -6,8 +6,6 @@ const router = express.Router();
 router.get('/:shortURL', async (req, res) => {
   const { shortURL } = req.params;
 
-  console.log(shortURL);
-
   const [[url]] = await getOriginalURL(shortURL);
 
   if (url) {
