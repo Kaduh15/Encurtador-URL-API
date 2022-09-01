@@ -1,16 +1,15 @@
 const express = require('express');
-const { getOriginalURL, updateVisited } = require('../utils/DB');
+const { getOriginalURL } = require('../db/main.db');
 
 const router = express.Router();
 
 router.get('/:shortURL', async (req, res) => {
   const { shortURL } = req.params;
 
-  const urlOriginal = await getOriginalURL(shortURL);
+  const [[url]] = await getOriginalURL(shortURL);
 
-  if (urlOriginal) {
-    await updateVisited(shortURL);
-    res.status(200).redirect(urlOriginal);
+  if (url) {
+    res.status(200).redirect(url.originalURL);
   }
 
   res.status(400).json({
