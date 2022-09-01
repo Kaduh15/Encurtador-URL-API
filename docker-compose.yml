@@ -21,3 +21,5 @@ services:
       - database
     volumes:
       - ./src/:/app/src
+    environment:
+      - PORT=3000
