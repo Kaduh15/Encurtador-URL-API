@@ -8,8 +8,6 @@ RUN npm install
 
 COPY . .
 
-RUN cp src/files/DB.json.exemplo src/files/DB.json
-
 EXPOSE 3000
 
 ENTRYPOINT [ "npm" ]
