@@ -67,7 +67,7 @@ RESPONSE Body:
 }
 ```
 
-### add URL
+### Access URL
 
 #### **GET** _`/:shortURL`_
 
