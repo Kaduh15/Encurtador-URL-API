@@ -14,5 +14,4 @@ const insertURL = ({ url }) => {
 
 module.exports = {
   insertURL,
-  findUrl
 };
