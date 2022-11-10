@@ -1,19 +1,11 @@
 const mysql = require('mysql2/promise');
 
-console.log({
-  host: process.env.DATABASE_HOST || 'database',
-  port: process.env.DATABASE_PORT || 3306,
-  user: process.env.DATABASE_USER || 'root',
-  password: process.env.DATABASE_PASSWORD || 'senha',
-  database: process.env.DATABASE_NAME || 'URLs_database',
-})
-
 const connection = mysql.createPool({
-  host: process.env.DATABASE_HOST || 'database',
-  port: process.env.DATABASE_PORT || 3306,
-  user: process.env.DATABASE_USER || 'root',
-  password: process.env.DATABASE_PASSWORD || 'senha',
-  database: process.env.DATABASE_NAME || 'URLs_database',
+  host: process.env.MYSQLHOST || 'database',
+  port: process.env.MYSQLPORT || 3306,
+  user: process.env.MYSQLUSER || 'root',
+  password: process.env.MYSQLPASSWORD || 'senha',
+  database: process.env.MYSQLDATABASE || 'URLs_database',
 });
 
 module.exports = connection;
