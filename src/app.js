@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Routes
 app.use('/', main);
-app.use('/add-url', addURL);
+app.use('/', addURL);
 
 // Middleware de Error
 app.use((err, _req, res, _next) => {
