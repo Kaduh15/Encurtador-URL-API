@@ -2,12 +2,12 @@ const createURL = require('../utils/urlGenerator');
 const conn = require('./connection');
 
 
-const insertURL = ({ url }) => {
+const insertURL = async ({ url }) => {
   const shortURL = createURL(5)
-  conn.execute(
+  await conn.execute(
     'INSERT INTO URL (shortURL, originalURL) VALUES (?, ?)', [shortURL, url],
   )
-  return conn.execute(
+  return await conn.execute(
     'SELECT * FROM URL where shortURL = ?', [shortURL],
   )
 ;}
